@@ -1,0 +1,104 @@
+:root {
+    --font-color-black: #000;
+    --font-color-gray: #7c7c7c;
+    --color-orange: #ff7d1a;
+}
+
+#main_card {
+    max-width: 1300px;
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--font-color-gray);
+        border-bottom: rgb(197, 194, 194, 0.3) 2px solid;
+        padding-bottom: 20px;
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            font-weight: 500;
+            color: rgb(124, 124, 124);
+            font-family: var(--font-family-1);
+        }
+
+        ul :hover {
+            cursor: pointer;
+            color: var(--font-color-black);
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+
+            img.icon-cart {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+
+            img.user-cart {
+                width: 23px;
+                height: 23px;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    main {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 50px;
+    }
+
+    .product {
+        background-color: #d5d5d5;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 270px;
+        height: 400px;
+        padding: 10px;
+
+        img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: var(--color-orange);
+            color: var(--font-color-black);
+            border: none;
+            height: 30px;
+            width: 100px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+
+    footer {
+        background-color: #d5d5d5;
+        font-weight: bold;
+
+        .content {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+
+}

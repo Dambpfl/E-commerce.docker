@@ -7,7 +7,10 @@ $data = $_POST;
 if(count($data) > 0) {
     $login = $data['email'];
     $password = $data['password'];
+
     if(loginUser($login, $password)) {
+        $_SESSION['user'] = $login;
+
         header("Location: index.php");
         exit;
     } else {

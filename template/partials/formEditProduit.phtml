@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Formulaire</title>
+</head>
+<body>
+    <h1>Modifier un produit</h1>
+
+    <form action="/editProduit.php?id=<?= $produit['id']?>" method='post'>
+        <label for="titre">Titre :</label>
+        <input type="text" name="titre" id="titre" value="<?= $produit['titre'] ?>">
+        <br>
+        <label for="description">Description :</label>
+        <input type="text" name="description" id="description" value="<?= $produit['description'] ?>">
+        <br>
+        <label for="prix">Prix :</label>
+        <input type="number" name="prix" id="prix" step="0.01" min="0" value="<?= $produit['prix'] ?>">
+        <br>
+        <label for="image">Image :</label>
+        <input type="url" name="image" id="image" value="<?= $produit['image'] ?>">
+        <br>
+        <input type="submit" value="Modifier">
+    </form>
+</body>

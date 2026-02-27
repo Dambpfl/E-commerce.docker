@@ -21,20 +21,22 @@ function getUserById($id) {
 
 function addUser($email, $password) {
     $conn = connexionBDD();
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     $stmt = $conn->prepare("INSERT INTO user (email,password) VALUES(:email, :password);");
     $stmt->execute([
         ':email'=>$email,
-        ':password'=>$password
+        ':password'=>$hashedPassword
     ]);
 }
 
 function updateUser($id, $email, $password) {
     $conn = connexionBDD();
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     $stmt = $conn->prepare("UPDATE user SET email=:email, password=:password WHERE id=:id;");
     $stmt->execute([
         ':id'=>$id,
         ':email'=>$email,
-        ':password'=>$password
+        ':password'=>$hashedPassword
     ]);
 }
 

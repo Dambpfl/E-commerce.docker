@@ -10,6 +10,9 @@ if (count($data) > 0) {
     $prix = $data['prix'];
     $image = $data['image'];
     addProduct($titre, $description, $prix, $image);
+
+    header("Location: index.php");
+    exit;
 }
 
 include('./template/partials/formProduit.phtml');

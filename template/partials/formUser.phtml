@@ -10,27 +10,35 @@
     <?php 
     $page = basename($_SERVER['PHP_SELF']);
 
-    if($page === 'ajoutUser.php') {   ?>
+    if(isset($erreur) && $erreur) : ?>
+    <p class="error"><?= htmlspecialchars($erreur) ?></p>
+    <?php endif; ?>
+
+    <?php if(isset($success) && $success) : ?>
+        <p class="success"><?= htmlspecialchars($success) ?></p>
+    <?php endif; ?>
+
+    <?php if($page === 'ajoutUser.php') : ?>
         <h1>S'inscrire</h1>
         <form action="./ajoutUser.php" method='post'>
             <label for="email">E-mail :</label>
-            <input type="email" name="email" id="e-mail" required>
+            <input type="email" name="email" id="email" required>
             <br>
             <label for="password">Mot de passe :</label>
             <input type="password" name="password" id="password" required>
             <br>
             <input type="submit" value="Valider">
         </form>
-    <?php } elseif ($page === 'hote.php') { ?>
-    <h1>Se connecter</h1>
-    <form action="./hote.php" method='post'>
-        <label for="email">E-mail :</label>
-        <input type="email" name="email" id="e-mail" required>
-        <br>
-        <label for="password">Mot de passe :</label>
-        <input type="password" name="password" id="password" required>
-        <br>
-        <input type="submit" value="Valider">
-    </form>
-    <?php } ?>
+    <?php elseif ($page === 'hote.php') : ?>
+        <h1>Se connecter</h1>
+        <form action="./hote.php" method='post'>
+            <label for="email">E-mail :</label>
+            <input type="email" name="email" id="email" required>
+            <br>
+            <label for="password">Mot de passe :</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <input type="submit" value="Valider">
+        </form>
+    <?php endif; ?>
 </body>

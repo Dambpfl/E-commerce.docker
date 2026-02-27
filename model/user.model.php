@@ -60,3 +60,10 @@ function loginUser($email, $password) {
 
     return false;
 }
+
+function userExists($email) {
+    $conn = connexionBDD();
+    $stmt = $conn->prepare("SELECT COUNT(*) FROM user WHERE email = :email");
+    $stmt->execute([':email' => $email]);
+    return $stmt->fetchColumn() > 0;
+}

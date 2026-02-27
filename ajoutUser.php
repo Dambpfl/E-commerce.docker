@@ -2,12 +2,22 @@
 include('./template/header.phtml');
 include('./model/user.model.php');
 
-$data = $_POST;
+$erreur = null;
+$success = null;
 
-if (count($data) > 0) {
-    $email = $data['email'];
-    $password = $data['password'];
-    addUser($email, $password);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
+
+    if ($email === '' || $password === '') {
+        $erreur = "Veuillez remplir tous les champs.";
+    } elseif (userExists($email)) {
+        $erreur = "Cet email est déjà utilisé.";
+    } else {
+        $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+        addUser($email, $password_hashed);
+        $success = "Compte créé avec succès !";
+    }
 }
 
 include('./template/partials/formUser.phtml');

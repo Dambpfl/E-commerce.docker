@@ -4,19 +4,25 @@ session_start();
 include('./template/header.phtml');
 include('./model/user.model.php');
 
-$data = $_POST;
+$erreur = null;
 
-if(count($data) > 0) {
-    $login = $data['email'];
-    $password = $data['password'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $login = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
 
-    if(loginUser($login, $password)) {    
-        $_SESSION['user'] = $login;
-
-        header("Location: index.php");
-        exit;
+    if ($login === '' || $password === '') {
+        $erreur = "Veuillez remplir tous les champs.";
     } else {
-        $erreur = "Email ou mot de passe incorrect.";
+        $user = loginUser($login, $password);
+
+        if ($user) {
+            $_SESSION['user'] = $user;
+            header("Location: index.php");
+            exit;
+        } else {
+            $erreur = "Email ou mot de passe incorrect.";
+        }
     }
 }
+
 include('./template/partials/formUser.phtml');

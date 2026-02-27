@@ -56,6 +56,8 @@ function loginUser($email, $password) {
     ]);
     $user = $stmt->fetch();
 
+    var_dump($password, gettype($password));
+
     if ($user && password_verify($password, $user['password'])) {
         return $user;
     }

@@ -14,8 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (userExists($email)) {
         $erreur = "Cet email est déjà utilisé.";
     } else {
-        $password_hashed = password_hash($password, PASSWORD_DEFAULT);
-        addUser($email, $password_hashed);
+        addUser($email, $password);
         $success = "Compte créé avec succès !";
     }
 }

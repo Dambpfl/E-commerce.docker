@@ -1,0 +1,47 @@
+<?php
+
+include('./model/connexion.php');
+
+function getAllUsers() {
+    $conn = connexionBDD();
+    $stmt = $conn->query("SELECT * FROM user;");
+    $users = $stmt->fetchAll();
+    return $users;
+}
+
+function getUserById($id) {
+    $conn = connexionBDD();
+    $stmt = $conn->prepare("SELECT * FROM user WHERE id=:id;");
+    $stmt->execute([
+        ':id'=>$id
+    ]);
+    $users = $stmt->fetchAll();
+    return $users[0];
+}
+
+function addUser($email, $password) {
+    $conn = connexionBDD();
+    $stmt = $conn->prepare("INSERT INTO user (email,password) VALUES(:email, :password);");
+    $stmt->execute([
+        ':email'=>$email,
+        ':password'=>$password
+    ]);
+}
+
+function updateUser($id, $email, $password) {
+    $conn = connexionBDD();
+    $stmt = $conn->prepare("UPDATE user SET email=:email, password=:password WHERE id=:id;");
+    $stmt->execute([
+        ':id'=>$id,
+        ':email'=>$email,
+        ':password'=>$password
+    ]);
+}
+
+function deleteUser($id) {
+    $conn = connexionBDD();
+    $stmt = $conn->prepare("DELETE FROM user WHERE id=:id;");
+    $stmt->execute([
+        ':id'=>$id
+    ]);
+}

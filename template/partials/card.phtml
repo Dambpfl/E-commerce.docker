@@ -4,4 +4,8 @@
     <p><?= $p['description'] ?></p>
     <p><?= $p['prix'] ?> €</p>
     <button>Acheter</button>
+    <form action="deleteProduit.php" method="post">
+        <input type="hidden" name="id" value="<?= $p['id'] ?>">
+        <input type="submit" value="Supprimer" onclick="return confirm('Supprimer ce produit ?');">
+    </form>
 </div>

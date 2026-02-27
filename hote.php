@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include('./template/header.phtml');
 include('./model/user.model.php');
 
@@ -8,7 +10,7 @@ if(count($data) > 0) {
     $login = $data['email'];
     $password = $data['password'];
 
-    if(loginUser($login, $password)) {
+    if(loginUser($login, $password)) {    
         $_SESSION['user'] = $login;
 
         header("Location: index.php");

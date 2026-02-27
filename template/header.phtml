@@ -18,6 +18,13 @@
                     </ul>
                 </div>
                 <div>
+                    <?php 
+                        if(isset($_SESSION['user'])) {
+                            echo 'connecté';
+                        } else {
+                            echo 'pas connecté';
+                        }
+                    ?>
                     <a href="hote.php">Se connecter</a>
                     <a href="ajoutUser.php">S'inscrire</a>
                     <!-- 

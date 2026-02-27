@@ -45,3 +45,18 @@ function deleteUser($id) {
         ':id'=>$id
     ]);
 }
+
+function loginUser($email, $password) {
+    $conn = connexionBDD();
+    $stmt = $conn->prepare("SELECT * FROM user WHERE email=:email");
+    $stmt->execute([
+        ':email' => $email
+    ]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+        return $user;
+    }
+
+    return false;
+}

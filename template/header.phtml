@@ -25,13 +25,15 @@ if (session_status() == PHP_SESSION_NONE) {
                 <div>
                     <?php 
                         if(isset($_SESSION['user'])) {
-                            echo 'connecté';
+                            echo 'Connecté';
+                            echo ' <a href="logout.php">Se déconnecter</a>'; // bouton déco
                         } else {
                             echo 'pas connecté';
+                            echo ' <a href="hote.php">Se connecter</a>';
+                            echo ' <a href="ajoutUser.php">S\'inscrire</a>';
                         }
                     ?>
-                    <a href="hote.php">Se connecter</a>
-                    <a href="ajoutUser.php">S'inscrire</a>
+
                     <!-- 
                     <img src="./assets/images/icon-cart.svg" alt="shop-cart" class="icon-cart">
                     <img src="./assets/images/user.svg" alt="user-cart" class="user-cart">

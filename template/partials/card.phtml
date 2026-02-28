@@ -2,7 +2,7 @@
     <img src="<?= htmlentities($p['image']) ?>" alt="shoes">
     <h1><?= htmlentities($p['titre']) ?></h1>
     <p><?= htmlentities($p['description']) ?></p>
-    <p><?= htmlentities($p['prix']) ?> €</p>
+    <p><strong><?= htmlentities($p['prix']) ?> €</strong></p>
     <button>Acheter</button>
     <div class='button_admin'>
         <?php if(!empty($_SESSION['user'])) { ?>

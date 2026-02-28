@@ -20,25 +20,29 @@
 
     <?php if($page === 'ajoutUser.php') : ?>
         <h1>Inscription</h1>
-        <form action="./ajoutUser.php" method='post'>
-            <label for="email">E-mail :</label>
-            <input type="email" name="email" id="email" required>
-            <br>
-            <label for="password">Mot de passe :</label>
-            <input type="password" name="password" id="password" required>
-            <br>
-            <input type="submit" value="Valider">
-        </form>
+        <div class="form">
+            <div class="form-content">
+                <form action="./ajoutUser.php" method='post'>
+                    <label for="email">E-mail :</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" name="password" id="password" required>
+                    <input type="submit" value="Valider" class="valider">
+                </form>
+            </div>
+        </div>
     <?php elseif ($page === 'hote.php') : ?>
         <h1>Connexion</h1>
-        <form action="./hote.php" method='post'>
-            <label for="email">E-mail :</label>
-            <input type="email" name="email" id="email" required>
-            <br>
-            <label for="password">Mot de passe :</label>
-            <input type="password" name="password" id="password" required>
-            <br>
-            <input type="submit" value="Valider">
-        </form>
+        <div class="form">
+            <div class="form-content">
+                <form action="./hote.php" method='post'>
+                    <label for="email">E-mail :</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" name="password" id="password" required>
+                    <input type="submit" value="Valider" class="valider">
+                </form>
+            </div>
+        </div>
     <?php endif; ?>
 </body>

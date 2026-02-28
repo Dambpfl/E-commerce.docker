@@ -8,20 +8,23 @@
 </head>
 <body>
     <h1>Ajouter un produit</h1>
-
-    <form action="./ajoutProduit.php" method='post'>
-        <label for="titre">Titre :</label>
-        <input type="text" name="titre" id="titre">
-        <br>
-        <label for="description">Description :</label>
-        <input type="text" name="description" id="description">
-        <br>
-        <label for="prix">Prix :</label>
-        <input type="number" name="prix" id="prix" step="0.01" min="0">
-        <br>
-        <label for="image">Image :</label>
-        <input type="url" name="image" id="image">
-        <br>
-        <input type="submit" value="Ajouter un produit">
-    </form>
+    <div class="form">
+        <div class="form-content">
+            <form action="./ajoutProduit.php" method='post'>
+                <label for="titre">Titre :</label>
+                <input type="text" name="titre" id="titre">
+                <br>
+                <label for="description">Description :</label>
+                <input type="text" name="description" id="description">
+                <br>
+                <label for="prix">Prix :</label>
+                <input type="number" name="prix" id="prix" step="0.01" min="0">
+                <br>
+                <label for="image">Image :</label>
+                <input type="url" name="image" id="image">
+                <br>
+                <input type="submit" value="Ajouter un produit" class="valider">
+            </form>
+        </div>
+    </div>
 </body>

@@ -106,6 +106,80 @@
         margin-bottom: 50px;
     }
 
+    h1 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--font-color-black);
+        margin-bottom: 1.5rem;
+        text-align: center;
+        padding-bottom: 0.75rem;
+    }
+
+    h1::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--color-orange);
+      border-radius: 2px;
+      margin: 0.5rem auto 0;
+    }
+
+    .form {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-content {
+        padding: 10px;
+        width: 500px;
+        height: 100%;
+    }
+
+    label {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        color: var(--font-color-black);
+        text-transform: uppercase;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"],
+    input[type="url"] {
+        box-sizing: border-box;
+        background-color: #f5f5f5;
+        border: 1.5px solid #d5d5d5;
+        border-radius: 5px;
+        color: var(--font-color-black);
+        padding: 10px;
+        width: 100%;
+        outline: none;
+        margin-bottom: 8px;
+    }
+
+    .valider {
+        margin-top: 5px;
+        background-color: var(--color-orange);
+        border: none;
+        border-radius: 5px;
+        color: var(--font-color-black);
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        height: 44px;
+        width: 100%;
+        transition: transform 0.15s;
+    }
+
+    .valider:hover {
+        transform: translateY(-1px);
+    }
+
     .product {
         background-color: #d5d5d5;
         border-radius: 10px;
@@ -144,7 +218,8 @@
             margin-top: 10px;
         }
 
-        input[type='submit'] {
+        .btn-edit,
+        .btn-delete {
             background: rgba(0, 0, 0, 0.07);
             color: var(--font-color-black);
             border: 1px solid rgba(0, 0, 0, 0.1);
@@ -155,15 +230,16 @@
             transition: background 0.2s, transform 0.15s;
         }
 
-        input[type='submit']:hover {
+        .btn-edit:hover {
             background: rgba(0, 0, 0, 0.13);
             transform: translateY(-1px);
         }
 
-        form:last-child input[type='submit']:hover {
+        .btn-delete:hover {
             background: rgba(200, 40, 30, 0.1);
             border-color: rgba(200, 40, 30, 0.3);
             color: #c0392b;
+            transform: translateY(-1px);
         }
     }
 

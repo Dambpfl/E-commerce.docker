@@ -8,20 +8,23 @@
 </head>
 <body>
     <h1>Modifier un produit</h1>
-
-    <form action="/editProduit.php?id=<?= htmlentities($produit['id'])?>" method='post'>
-        <label for="titre">Titre :</label>
-        <input type="text" name="titre" id="titre" value="<?= htmlentities($produit['titre']) ?>">
-        <br>
-        <label for="description">Description :</label>
-        <input type="text" name="description" id="description" value="<?= htmlentities($produit['description']) ?>">
-        <br>
-        <label for="prix">Prix :</label>
-        <input type="number" name="prix" id="prix" step="0.01" min="0" value="<?= htmlentities($produit['prix']) ?>">
-        <br>
-        <label for="image">Image :</label>
-        <input type="url" name="image" id="image" value="<?= htmlentities($produit['image']) ?>">
-        <br>
-        <input type="submit" value="Modifier">
-    </form>
+    <div class="form">
+        <div class="form-content">
+            <form action="/editProduit.php?id=<?= htmlentities($produit['id'])?>" method='post'>
+                <label for="titre">Titre :</label>
+                <input type="text" name="titre" id="titre" value="<?= htmlentities($produit['titre']) ?>">
+                <br>
+                <label for="description">Description :</label>
+                <input type="text" name="description" id="description" value="<?= htmlentities($produit['description']) ?>">
+                <br>
+                <label for="prix">Prix :</label>
+                <input type="number" name="prix" id="prix" step="0.01" min="0" value="<?= htmlentities($produit['prix']) ?>">
+                <br>
+                <label for="image">Image :</label>
+                <input type="url" name="image" id="image" value="<?= htmlentities($produit['image']) ?>">
+                <br>
+                <input type="submit" value="Modifier" class="valider">
+            </form>
+        </div>
+    </div>
 </body>

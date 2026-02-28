@@ -19,25 +19,31 @@ if (session_status() == PHP_SESSION_NONE) {
                     <img src="./assets/images/logo.svg" alt="logo">
                     <ul>
                         <li><a href="index.php">Collections</a></li>
+                        <?php if (isset($_SESSION['user'])): ?>
                         <li><a href="ajoutProduit.php">Ajouter un produit</a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
                 <div>
-                    <?php 
-                        if(isset($_SESSION['user'])) {
-                            echo 'Connecté';
-                            echo ' <a href="logout.php">Se déconnecter</a>'; // bouton déco
-                        } else {
-                            echo 'pas connecté';
-                            echo ' <a href="hote.php">Se connecter</a>';
-                            echo ' <a href="ajoutUser.php">S\'inscrire</a>';
-                        }
-                    ?>
-
-                    <!-- 
                     <img src="./assets/images/icon-cart.svg" alt="shop-cart" class="icon-cart">
-                    <img src="./assets/images/user.svg" alt="user-cart" class="user-cart">
-                    -->
+                    <div class="user-menu-container">
+                    <img 
+                        src="<?= isset($_SESSION['user']) ? './assets/images/user-green.svg' : './assets/images/user.svg' ?>" 
+                        alt="user-cart" 
+                        class="user-cart" 
+                        id="userIcon"
+                    >
+
+                    <!-- Menu déroulant -->
+                    <div class="user-dropdown" id="userDropdown">
+                        <?php if (isset($_SESSION['user'])): ?>
+                            <a href="logout.php">Déconnexion</a>
+                        <?php else: ?>
+                            <a href="hote.php">Connexion</a>
+                            <a href="ajoutUser.php">Inscription</a>
+                        <?php endif; ?>
+                    </div>
+                </div>
                 </div>
             </nav>
         </header>

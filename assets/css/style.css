@@ -36,7 +36,45 @@
             cursor: pointer;
             color: var(--font-color-black);
         }
-        
+
+        .user-menu-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .user-cart {
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+        }
+
+        .user-dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            min-width: 140px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .user-dropdown a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: var(--font-color-gray);
+            padding: 5px 0;
+            transition: background 0.2s;
+        }
+
+        .user-dropdown a:hover {
+            color: var(--font-color-black);
+        }
+       
         div {
             display: flex;
             align-items: center;
@@ -118,6 +156,7 @@
     footer {
         background-color: #d5d5d5;
         font-weight: bold;
+        margin-top: 50px;
 
         .content {
             display: flex;

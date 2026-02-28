@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (empty($_SESSION['user'])) {
+    header('Location: hote.php');
+    exit;
+}
+
 include('./template/header.phtml');
 include('./model/produit.model.php');
 
@@ -16,3 +23,4 @@ if (count($data) > 0) {
 }
 
 include('./template/partials/formProduit.phtml');
+include('./template/footer.phtml');

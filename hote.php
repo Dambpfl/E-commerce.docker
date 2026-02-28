@@ -26,3 +26,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 include('./template/partials/formUser.phtml');
+include('./template/footer.phtml');

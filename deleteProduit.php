@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (empty($_SESSION['user'])) {
+    header('Location: hote.php');
+    exit;
+}
+
 include('./model/produit.model.php');
 
 $data = $_POST;

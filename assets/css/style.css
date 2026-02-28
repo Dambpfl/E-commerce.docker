@@ -2,7 +2,7 @@
     --font-color-black: #000;
     --font-color-gray: #7c7c7c;
     --color-orange: #ff7d1a;
-    --bg-color: #d5d5d5;
+    --bg-color: #c5c2c24d;
 }
 
 #main_card {
@@ -16,7 +16,7 @@
         justify-content: space-between;
         align-items: center;
         color: var(--font-color-gray);
-        border-bottom: rgb(197, 194, 194, 0.3) 2px solid;
+        border-bottom: var(--bg-color) 2px solid;
         padding-bottom: 20px;
 
         .menu ul {
@@ -98,7 +98,7 @@
     }
 
     main {
-        margin-top: 50px;
+        margin-top: 30px;
         display: flex;
         justify-content: center;
         align-items: stretch;
@@ -182,7 +182,7 @@
     }
 
     .product {
-        background-color: var(--bg-color);
+        background: var(--bg-color);
         border-radius: 10px;
         display: flex;
         justify-content: space-between;
@@ -245,9 +245,9 @@
     }
 
     footer {
-        background-color: var(--bg-color);
-        margin-top: 50px;
-        border-radius: 5px;
+        background: var(--bg-color);
+        margin-top: 30px;
+        border-radius: 10px;
 
         .content {
             display: flex;

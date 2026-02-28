@@ -157,6 +157,7 @@
         background-color: #d5d5d5;
         font-weight: bold;
         margin-top: 50px;
+        border-radius: 5px;
 
         .content {
             display: flex;

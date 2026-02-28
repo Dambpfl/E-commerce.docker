@@ -4,16 +4,17 @@
     <p><?= htmlentities($p['description']) ?></p>
     <p><?= htmlentities($p['prix']) ?> €</p>
     <button>Acheter</button>
-
-    <?php if(!empty($_SESSION['user'])) { ?>
-        <form action="editProduit.php" method="get">
-            <input type="hidden" name="id" value="<?= htmlentities($p['id']) ?>">
-            <input type="submit" value="Éditer">
-        </form>
-    
-        <form action="deleteProduit.php" method="post">
-            <input type="hidden" name="id" value="<?= htmlentities($p['id']) ?>">
-            <input type="submit" value="Supprimer" onclick="return confirm('Supprimer ce produit ?');">
-        </form>
-    <?php } ?>
+    <div class='button_admin'>
+        <?php if(!empty($_SESSION['user'])) { ?>
+            <form action="editProduit.php" method="get">
+                <input type="hidden" name="id" value="<?= htmlentities($p['id']) ?>">
+                <input type="submit" value="Éditer">
+            </form>
+        
+            <form action="deleteProduit.php" method="post">
+                <input type="hidden" name="id" value="<?= htmlentities($p['id']) ?>">
+                <input type="submit" value="Supprimer" onclick="return confirm('Supprimer ce produit ?');">
+            </form>
+        <?php } ?>
+    </div>
 </div>

@@ -2,6 +2,7 @@
     --font-color-black: #000;
     --font-color-gray: #7c7c7c;
     --color-orange: #ff7d1a;
+    --bg-color: #d5d5d5;
 }
 
 #main_card {
@@ -181,7 +182,7 @@
     }
 
     .product {
-        background-color: #d5d5d5;
+        background-color: var(--bg-color);
         border-radius: 10px;
         display: flex;
         justify-content: space-between;
@@ -244,7 +245,7 @@
     }
 
     footer {
-        background-color: #d5d5d5;
+        background-color: var(--bg-color);
         margin-top: 50px;
         border-radius: 5px;
 

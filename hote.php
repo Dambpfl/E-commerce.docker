@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('./template/header.phtml');
+include('./template/views/header.phtml');
 include('./model/user.model.php');
 
 $erreur = null;
@@ -25,5 +25,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include('./template/partials/formUser.phtml');
-include('./template/footer.phtml');
+include('./template/forms/formUser.phtml');
+include('./template/views/footer.phtml');

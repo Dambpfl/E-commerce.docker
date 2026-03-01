@@ -3,5 +3,5 @@
     $produits = getAllProducts();
 
     
-    include('./template/index.phtml');
+    include('./template/views/index.phtml');
 ?>

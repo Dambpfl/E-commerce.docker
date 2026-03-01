@@ -6,7 +6,7 @@ if (empty($_SESSION['user'])) {
     exit;
 }
 
-include('./template/header.phtml');
+include('./template/views/header.phtml');
 include('./model/produit.model.php');
 
 if (!empty($_GET['id'])) {
@@ -27,5 +27,5 @@ if (count($data) > 0) {
     exit;
 }
 
-include('./template/partials/formEditProduit.phtml');
-include('./template/footer.phtml');
+include('./template/forms/formEditProduit.phtml');
+include('./template/views/footer.phtml');

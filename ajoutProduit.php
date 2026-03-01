@@ -6,7 +6,7 @@ if (empty($_SESSION['user'])) {
     exit;
 }
 
-include('./template/header.phtml');
+include('./template/views/header.phtml');
 include('./model/produit.model.php');
 
 $data = $_POST;
@@ -22,5 +22,5 @@ if (count($data) > 0) {
     exit;
 }
 
-include('./template/partials/formProduit.phtml');
-include('./template/footer.phtml');
+include('./template/forms/formProduit.phtml');
+include('./template/views/footer.phtml');

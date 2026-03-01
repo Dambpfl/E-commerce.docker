@@ -1,10 +1,11 @@
 <?php
+include('./template/views/header.phtml');
+
 if (empty($_SESSION['user'])) {
     header('Location: hote.php');
     exit;
 }
 
-include('./template/views/header.phtml');
 include('./model/produit.model.php');
 
 if (!empty($_GET['id'])) {

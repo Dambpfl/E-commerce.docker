@@ -32,11 +32,11 @@
                 </form>
             </div>
         </div>
-    <?php elseif ($page === 'hote.php') : ?>
+    <?php elseif ($page === 'login.php') : ?>
         <h1>Connexion</h1>
         <div class="form">
             <div class="form-content">
-                <form action="./hote.php" method='post'>
+                <form action="./login.php" method='post'>
                     <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
                     <label for="email">E-mail :</label>
                     <input type="email" name="email" id="email" required>

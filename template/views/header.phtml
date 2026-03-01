@@ -12,7 +12,7 @@ if (empty($_SESSION['csrf_token'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>E-commerce</title>
 </head>
 <body>
@@ -26,23 +26,23 @@ if (empty($_SESSION['csrf_token'])) {
                     <span></span>
                 </button>
 
-                <img src="./assets/images/logo.svg" alt="logo" class="nav-logo">
+                <img src="/assets/images/logo.svg" alt="logo" class="nav-logo">
 
                 <div class="menu" id="menu">
                     <ul>
-                        <li><a href="index.php">Collections</a></li>
+                        <li><a href="/index.php">Collections</a></li>
                         <?php if (isset($_SESSION['user'])): ?>
-                        <li><a href="ajoutProduit.php">Ajouter un produit</a></li>
+                        <li><a href="/controller/ajoutProduit.php">Ajouter un produit</a></li>
                         <?php endif; ?>
                     </ul>
                 </div>
 
 
                 <div class="nav-right">
-                    <img src="./assets/images/icon-cart.svg" alt="shop-cart" class="icon-cart">
+                    <img src="/assets/images/icon-cart.svg" alt="shop-cart" class="icon-cart">
                     <div class="user-menu-container">
                         <img 
-                            src="<?= isset($_SESSION['user']) ? './assets/images/user-green.svg' : './assets/images/user.svg' ?>" 
+                            src="<?= isset($_SESSION['user']) ? '/assets/images/user-green.svg' : '/assets/images/user.svg' ?>" 
                             alt="user-cart" 
                             class="user-cart" 
                             id="userIcon"
@@ -51,10 +51,10 @@ if (empty($_SESSION['csrf_token'])) {
                         <!-- Menu déroulant -->
                         <div class="user-dropdown" id="userDropdown">
                             <?php if (isset($_SESSION['user'])): ?>
-                                <a href="logout.php">Déconnexion</a>
+                                <a href="/controller/logout.php">Déconnexion</a>
                             <?php else: ?>
-                                <a href="hote.php">Connexion</a>
-                                <a href="ajoutUser.php">Inscription</a>
+                                <a href="/controller/login.php">Connexion</a>
+                                <a href="/controller/ajoutUser.php">Inscription</a>
                             <?php endif; ?>
                         </div>
                     </div>

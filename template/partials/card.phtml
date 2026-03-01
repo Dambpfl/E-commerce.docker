@@ -6,12 +6,12 @@
     <button>Acheter</button>
     <div class='button_admin'>
         <?php if(!empty($_SESSION['user'])) { ?>
-            <form action="editProduit.php" method="get">
+            <form action="/controller/editProduit.php" method="get">
                 <input type="hidden" name="id" value="<?= htmlentities($p['id']) ?>">
                 <input type="submit" value="Modifier" class="btn-edit">
             </form>
         
-            <form action="deleteProduit.php" method="post">
+            <form action="/controller/deleteProduit.php" method="post">
                 <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
                 <input type="hidden" name="id" value="<?= htmlentities($p['id']) ?>">
                 <input type="submit" value="Supprimer" onclick="return confirm('Supprimer ce produit ?');" class="btn-delete">

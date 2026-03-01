@@ -1,6 +1,6 @@
 <?php
-include('./template/views/header.phtml');
-include('./model/user.model.php');
+include(__DIR__.'/../template/views/header.phtml');
+include(__DIR__.'/../model/user.model.php');
 
 $erreur = null;
 $success = null;
@@ -32,5 +32,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include('./template/forms/formUser.phtml');
-include('./template/views/footer.phtml');
+include(__DIR__.'/../template/forms/formUser.phtml');
+include(__DIR__.'/../template/views/footer.phtml');

@@ -1,6 +1,6 @@
 <?php
 
-include('./model/connexion.php');
+include(__DIR__ .'/connexion.php');
 
 function getAllUsers() {
     $conn = connexionBDD();

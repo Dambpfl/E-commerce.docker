@@ -1,6 +1,6 @@
 <?php
 
-include('./model/connexion.php');
+include(__DIR__ .'/connexion.php');
 
 function getAllProducts() {
     $conn = connexionBDD();

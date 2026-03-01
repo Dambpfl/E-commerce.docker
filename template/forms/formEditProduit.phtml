@@ -10,7 +10,7 @@
     <h1>Modifier un produit</h1>
     <div class="form">
         <div class="form-content">
-            <form action="/editProduit.php" method='post'>
+            <form action="./editProduit.php" method='post'>
                 <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
                 <input type="hidden" name="id" value="<?= htmlentities($produit['id']) ?>">
                 <label for="titre">Titre :</label>

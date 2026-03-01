@@ -1,12 +1,12 @@
 <?php
-include('./template/views/header.phtml');
+include(__DIR__.'/../template/views/header.phtml');
 
 if (empty($_SESSION['user'])) {
-    header('Location: hote.php');
+    header('Location: login.php');
     exit;
 }
 
-include('./model/produit.model.php');
+include(__DIR__.'/../model/produit.model.php');
 
 $data = $_POST;
 
@@ -20,6 +20,6 @@ if (count($data) > 0) {
     $id = intval($data['id']);
     deleteProduct($id);
 
-    header("Location: index.php");
+    header("Location: /index.php");
     exit;
 }

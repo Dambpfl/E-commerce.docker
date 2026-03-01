@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 if (empty($_SESSION['user'])) {
     header('Location: hote.php');
     exit;
@@ -17,6 +15,13 @@ if (!empty($_GET['id'])) {
 $data = $_POST;
 
 if (count($data) > 0) {
+
+    if (empty($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        http_response_code(403);
+        die('Action non autorisée.');
+    }
+
+    $id = intval($_POST['id'] ?? 0);
     $titre = htmlspecialchars(trim($_POST['titre']), ENT_QUOTES, 'UTF-8');
     $description = htmlspecialchars(trim($_POST['description']), ENT_QUOTES, 'UTF-8');
     $prix = filter_var($_POST['prix'], FILTER_VALIDATE_FLOAT);

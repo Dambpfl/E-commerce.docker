@@ -23,6 +23,7 @@
         <div class="form">
             <div class="form-content">
                 <form action="./ajoutUser.php" method='post'>
+                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
                     <label for="email">E-mail :</label>
                     <input type="email" name="email" id="email" required>
                     <label for="password">Mot de passe :</label>
@@ -36,6 +37,7 @@
         <div class="form">
             <div class="form-content">
                 <form action="./hote.php" method='post'>
+                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
                     <label for="email">E-mail :</label>
                     <input type="email" name="email" id="email" required>
                     <label for="password">Mot de passe :</label>

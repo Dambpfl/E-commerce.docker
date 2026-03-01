@@ -7,6 +7,12 @@ $success = null;
 $email = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if (empty($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        http_response_code(403);
+        die('Action non autorisée.');
+    }
+
     $email = trim($_POST['email'] ?? '');
     $password = trim($_POST['password'] ?? '');
 

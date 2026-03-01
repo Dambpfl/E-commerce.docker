@@ -11,6 +11,7 @@
     <div class="form">
         <div class="form-content">
             <form action="./ajoutProduit.php" method='post'>
+                <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
                 <label for="titre">Titre :</label>
                 <input type="text" name="titre" id="titre">
                 <br>
